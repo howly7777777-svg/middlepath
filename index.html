@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>中道生活 Middle Path</title>
+  <meta name="description" content="中道生活 Middle Path — 卡片练习，找回生活平衡" />
+  <style>
+    :root {
+      --sage: #597a66;
+      --cream: #f5f1ea;
+      --ink: #2e3833;
+      --muted: #6b756f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #f7f3eb 0%, #eef3ef 100%);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+    }
+    .card {
+      width: min(520px, 100%);
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(89,122,102,0.15);
+      border-radius: 24px;
+      padding: 36px 28px;
+      box-shadow: 0 16px 40px rgba(46,56,51,0.08);
+      text-align: center;
+    }
+    .leaf {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #c9d9cf, #597a66);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 1.7rem;
+      letter-spacing: 0.02em;
+    }
+    .sub {
+      margin: 0 0 28px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .langs {
+      display: grid;
+      gap: 12px;
+    }
+    a.lang {
+      display: block;
+      text-decoration: none;
+      color: white;
+      background: var(--sage);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-weight: 600;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    a.lang:hover { transform: translateY(-1px); opacity: 0.95; }
+    .links {
+      margin-top: 22px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .links a { color: var(--sage); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="leaf" aria-hidden="true"></div>
+    <h1>中道生活 Middle Path</h1>
+    <p class="sub">Choose a language / 选择语言 / 選擇語言</p>
+    <div class="langs">
+      <a class="lang" href="./zh-hans/">简体中文</a>
+      <a class="lang" href="./zh-hant/">繁體中文</a>
+      <a class="lang" href="./en/">English</a>
+    </div>
+    <p class="links">
+      <a href="./zh-hans/privacy.html">Privacy</a> ·
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">EULA (Apple)</a>
+    </p>
+  </main>
+  <script>
+    (function () {
+      var lang = (navigator.language || "en").toLowerCase();
+      if (lang.startsWith("zh")) {
+        if (lang.includes("hant") || lang.includes("tw") || lang.includes("hk") || lang.includes("mo")) {
+          // stay on chooser, or auto-redirect:
+          // location.replace("./zh-hant/");
+        } else {
+          // location.replace("./zh-hans/");
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
